@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
 		<item value="true" key="ShowStatusLine"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=guessGame/&amp;lt;a9{a9a.java[a9a&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Guessing Game/src&amp;lt;{GuessGame.java[guessGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=guessGame/&amp;lt;a9{a9.java[guessGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=guessGame/&amp;lt;a9{a9a.java[a9a&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=guessGame/&amp;lt;a9{a9.java[guessGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Guessing Game/src&amp;lt;{GuessGame.java[guessGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=GuessGamev2/src&amp;lt;{guessGame.java[guessGame&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>

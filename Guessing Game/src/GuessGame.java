@@ -1,34 +1,43 @@
 // -Najm Sheikh
 // -11/5/14
-// -Create a...
+// -Create a guessing game that remembers and calculates high scores.
 
-
-import java.util.Scanner;
+import java.util.*;
 import java.io.*;
 
 class guessGame {
     @SuppressWarnings("resource")
 	public static void main(String[] args)throws IOException {
         Scanner sc = new Scanner(System.in);
-        File scores = new File("Scores.txt");
-        BufferedReader rd = new BufferedReader(new FileReader(scores));
-        BufferedWriter rt = new BufferedWriter(new FileWriter(scores,true));
-        int secret = 4, ct = 0, guess = 0, s1 = 100,s2 = 100, s3 = 100,highScore = 0;
+        File file = new File("Scores.txt");
+        BufferedReader rd = new BufferedReader(new FileReader(file));
+        BufferedWriter rt = new BufferedWriter(new FileWriter(file,true));
+        int secret = 0, ct = 0, guess = 0;
         String name="",line;
+        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<Integer> highscores = new ArrayList<Integer>();
+        ArrayList<Integer> scores = new ArrayList<Integer>();
+        int s1,s2,s3,z1,z2,z3;
+   
+//        SORTING
+        while((line = rd.readLine()) != null){
+        	int spc = line.indexOf(" ");
+        	names.add(line.substring(0,spc));
+            scores.add(Integer.parseInt(line.substring(spc+1)));
+            highscores.add(Integer.parseInt(line.substring(spc+1)));
+        }
         
-        line = rd.readLine();
-        if(rd.readLine() != null)
-            s1 = (int)(line.indexOf(" ")+1);
-        line = rd.readLine();
-        if(rd.ready() == true)
-            s2 = (int)(line.indexOf(" ")+1);
-        line = rd.readLine();
-        if(rd.ready() == true)
-            s3 = (int)(line.indexOf(" ")+1);
-//        highScore = Math.max(s1,Math.max(s2,s3));
-        System.out.println(s1+" "+s2+" "+s3);
+//        HIGHSCORE
+        Collections.sort(scores);
+        s1 = scores.get(0);
+        s2 = scores.get(1);
+        s3 = scores.get(2);
+        z1 = highscores.indexOf(s1);
+        z2 = highscores.indexOf(s2);
+        z3 = highscores.indexOf(s3);
 
-//        secret = (int) (Math.random() * 100 + 1);
+//        SECRET NUMBER GENERATOR & HINTER
+        secret = (int) (Math.random() * 100 + 1);
         long startTime = System.currentTimeMillis();
         while (!(ct >= 5 || guess == secret)) {
             System.out.println("Enter your guess:");
@@ -44,23 +53,36 @@ class guessGame {
             }
         }
 
+//        TIME CALCULATION
         long endTime = System.currentTimeMillis();
         long time = (endTime - startTime) / 1000;
         if (ct == 5 && !(guess == secret))
             System.out.println("Game Over!");
 
+//        SCORE & WIN/LOSS STATE CALCULATION
         if (guess == secret) {
             System.out.println("You won!");
             System.out.println("It took you " + time + " secs and " + ct + " try(s) to finish!");
-            highScore = (int) Math.max(highScore, time);
-//            if(highScore == time)
-//                System.out.println("You set a new high score!");
-            if(rd.readLine() == null){
+            if((line = rd.readLine()) == null){
+            	rt.newLine();
             	System.out.println("What is your name?");
             	rd.close();
             	name = sc.next();
             	rt.write(name + " " + time);
             	rt.close();
+            	
+            	if (time<s1){
+                	System.out.println("You set a new highscore!");
+                	System.out.println("Here are the current highscores:");
+                	System.out.println(name + " " + time);
+                	System.out.println(names.get(z1) + " " + s1);
+                    System.out.println(names.get(z2) + " " + s2);
+                }else{
+                	System.out.println("Here are the current highscores:");
+                	System.out.println(names.get(z1) + " " + s1);
+                    System.out.println(names.get(z2) + " " + s2);
+                    System.out.println(names.get(z3) + " " + s3);
+                }
             }else{
             	rt.newLine();
             	System.out.println("What is your name?");

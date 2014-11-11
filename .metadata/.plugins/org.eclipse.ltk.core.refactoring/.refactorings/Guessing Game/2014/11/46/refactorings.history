@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;scores&apos; in &apos;guessGame.main(...)&apos; to &apos;file&apos;&#x0D;&#x0A;- Original project: &apos;Guessing Game&apos;&#x0D;&#x0A;- Original element: &apos;guessGame.main(String[]).scores&apos;&#x0D;&#x0A;- Renamed element: &apos;scores&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;scores&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{GuessGame.java[guessGame~main~\[QString;@scores!297!333!302!307!QFile;!0!false" name="file" references="true" stamp="1415664036105" version="1.0"/>
+</session>
