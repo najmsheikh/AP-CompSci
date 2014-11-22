@@ -1,0 +1,19 @@
+
+public class Matrice {
+
+	public static void main(String[] args) {
+		int[][] set1 ={{1,2},{3,4}};
+		int[][] set2 ={{0,1},{0,0}};
+		int[][] finalset = new int[2][2];
+		int product=0;
+		
+		for(int i=0;i<2;i++){
+			for(int j=0;j<2;j++){
+				int sum = 0;
+				int prod = (set1[i][j] * set2[j][i]);
+				sum += prod;
+				System.out.println(sum);
+			}
+		}
+	}
+}
